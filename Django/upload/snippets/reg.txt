@@ -1,0 +1,12 @@
+def register(request):
+	if request.method=="POST":
+		form=UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect("registered")
+		else:
+			return redirect("register")
+	else:		
+		return render(request,"zmovi/register.html",{"form":UserCreationForm()})
+def registered(request):
+	return render(request,"zmovi/registered.html")	

@@ -1,0 +1,4 @@
+<h1>Movies List</h1>
+{% for m in movies %}
+<a href="{% url 'movies_detail' name=m.name %}">{{m.name}}</a><br/>
+{%endfor%}

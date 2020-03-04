@@ -1,0 +1,32 @@
+All the required files are there in the folder code files.
+Step 1
+python manage.py startapp movies
+Step 2
+registet application under installed apps
+'movies.apps.MoviesConfig'
+Step 3
+Copy 'models.py' into 'movies' applications models.py
+Step 4
+Paste 'admin.py' into the 'movies' application 'admin.py'
+Step 6
+python manage.py makemigrations movies
+Step 7 
+python manage.py migrate movies
+Step 8
+Open the admin interface using "localhost:8000/admin" locate the movies table and populate it with data of 3 movies
+Step 9
+Open backend.urls(myvenv>backend>backend>urls.py) and type the following line
+path('', include('movies.urls'))
+Comment out any existing url patterns except the admin url
+Step 10
+Create movie.urls(myvenv>backend>movies>urls.py)
+Step 11
+Paste 'urls.py' from uploaded files into the movies >urls.py file
+Step 12
+Paste the 'views.py' from uploaded files into the  movie applications views.py
+Step 13
+In movies folder create a folder called templates. In templates folder create a folder called movies. paste the files movies_list.html and movies_detail.html into this newly created folder
+Step 14
+Run the server and access the application at http://localhost:8000.It should show a list of movies.
+
+

@@ -1,0 +1,3 @@
+@login_required(login_url='/login')	
+#custom --- settings.py
+LOGOUT_REDIRECT_URL=''

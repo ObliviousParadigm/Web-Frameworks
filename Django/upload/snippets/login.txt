@@ -1,0 +1,17 @@
+class LoginView(View):
+	def get(self,request):
+		return render(request,"zmovi/register.html",{"form":AuthenticationForm()})
+	def post(self,request):
+		form=AuthenticationForm(data=request.POST)
+		if form.is_valid():
+			print ("login logic")
+			user = authenticate(request,username=form.cleaned_data.get('username'),password=form.cleaned_data.get('password'))
+			print(user)
+			if user is None:
+				return redirect(request,"login.html",{"form":form,"invalid_creds":True})
+			login(request, user)
+			return redirect(reverse('movies_list'))
+	
+		else:
+			print ("invalid login")
+			return render(request,"login.html",{"form":form,"invalid_creds":True})
