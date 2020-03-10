@@ -21,6 +21,6 @@ urlpatterns = [
     # us to our blog app
     path('admin/', admin.site.urls),
     # We're gonna tell Django which route should get mapped to our blog urls
-    path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),
 
 ]
