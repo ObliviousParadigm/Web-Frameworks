@@ -1,8 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+posts = [
+    {
+        'name': 'Adarsh',
+        'age': '20',
+        'sex': 'male'
+    },
+    {
+        'name': 'Mishu',
+        'age': '20',
+        'sex': 'female'
+    }
+]
 
 def home(request):
-    return HttpResponse('<h1>Blog Home</h1>')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/home.html', context)
 
 def about(request):
-    return HttpResponse('<h1>Blog About</h1>')
+    return render(request, 'blog/about.html', {'title': 'About Blog'})
