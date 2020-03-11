@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
-</head>
-<body>
-	<h1>Blog Home!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+
+    <title>Django Blog - {{ title }}</title>
+
+    {% else %}
+
+    <title>Django Blog</title>
+
+    {% endif %}
+  </head>
+  <body>
+    <!-- posts here is the key in the context dictionary that was passed in here -->
+    <!-- Double curly braces are used to access variables -->
+    {% for post in posts %}
+
+    <h1>{{ post.name }}</h1>
+    <p>Age: {{ post.age }}</p>
+    <p>Sex: {{ post.sex }}</p>
+
+    {% endfor %}
+  </body>
 </html>
