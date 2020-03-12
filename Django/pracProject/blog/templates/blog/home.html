@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
+{% extends "blog/base.html" %}
+{% block content %}
+<!-- posts here is the key in the context dictionary that was passed in here -->
+<!-- Double curly braces are used to access variables -->
+{% for post in posts %}
 
-    <title>Django Blog - {{ title }}</title>
+<h1>{{ post.name }}</h1>
+<p>Age: {{ post.age }}</p>
+<p>Sex: {{ post.sex }}</p>
 
-    {% else %}
-
-    <title>Django Blog</title>
-
-    {% endif %}
-  </head>
-  <body>
-    <!-- posts here is the key in the context dictionary that was passed in here -->
-    <!-- Double curly braces are used to access variables -->
-    {% for post in posts %}
-
-    <h1>{{ post.name }}</h1>
-    <p>Age: {{ post.age }}</p>
-    <p>Sex: {{ post.sex }}</p>
-
-    {% endfor %}
-  </body>
-</html>
+{% endfor %}
+{% endblock content %}
