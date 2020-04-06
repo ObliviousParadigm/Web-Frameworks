@@ -1,0 +1,42 @@
+from django.db import models
+from accounts.models import User
+
+# Create your models here.
+
+class Challenge(models.Model):
+
+    name = models.CharField(max_length=50, blank=True, default='')
+    host = models.CharField(max_length=100, blank=True, default='')
+    prize = models.CharField(max_length=50, blank=True, default='')
+    description = models.TextField(max_length=1000, blank=True, default='')
+
+    def __str__(self):
+        return self.name
+
+class Hackathon(models.Model):
+
+    name = models.CharField(max_length=50, blank=True, default='')
+    eventId = models.CharField(max_length=50, blank=True, default='')
+    startDate = models.DateField(null=True)
+    endDate = models.DateField(null=True)
+    location = models.TextField(max_length=100, blank=True, default='')
+    description = models.TextField(max_length=800, blank=True, default='')
+    participants = models.ManyToManyField(User, blank=True)
+    website = models.URLField(null=True, blank=True)
+    logo = models.ImageField(upload_to='hackathon_pics', null=True)
+    challenges = models.ManyToManyField(Challenge, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Team(models.Model):
+    
+    teamName = models.CharField(max_length=50, blank=True, default='')
+    hackathon = models.ForeignKey('Hackathon', on_delete=models.CASCADE)
+    SCORE_CHOICES = zip( range(1,4), range(1,4) )
+    members = models.IntegerField(choices=SCORE_CHOICES,default=1,blank=True)
+
+    def __str__(self):
+        return self.teamName
+
+

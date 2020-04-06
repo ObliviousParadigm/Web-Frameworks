@@ -1,0 +1,183 @@
+{% extends 'base_portal.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Resources</h1>
+    <a href="https://hackerearth.com/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-code"></i>
+      HackerEarth</a>
+  </div>
+  
+  <h3 class="h3 mb-0 text-gray-800">Get Started</h3>
+  <br>
+  <!--UPCOMING HACKATHON ROWS-->
+  <div class="col-lg-12">
+
+
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h5 class="m-0 font-weight-bold text-primary">
+          Introduction to GitHub <br>
+        </h5>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+        </h5>
+        <div class="dropdown no-arrow">
+        </div>
+        <div class="d-flex">
+          <div class="p-2">
+            <a href="https://lab.github.com/githubtraining/introduction-to-github" class="btn btn-success btn-icon-split float-lg-right">
+              <span class="icon text-white-200">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+              <span class="text">Go To Course</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <image class="account-img" src="{% static 'img/git.jpg' %}"></image>
+          </div>
+          <div class="col-md-9">
+            <strong>Difficulty: Beginner</strong><br>
+            <!-- <strong>Dates: {{ hackathon.startDate }} - {{ hackathon.endDate }}</strong><br> -->
+            This course will teach you the fundamentals of version control. This is the perfect way of learning how to
+            develop in a team.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h5 class="m-0 font-weight-bold text-primary">
+          Introduction to Firebase <br>
+        </h5>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+        </h5>
+        <div class="dropdown no-arrow">
+        </div>
+        <div class="d-flex">
+          <div class="p-2">
+            <a href="https://www.tutorialspoint.com/firebase/" class="btn btn-success btn-icon-split float-lg-right">
+              <span class="icon text-white-200">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+              <span class="text">Go To Course</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <image class="account-img" src="{% static 'img/firebase.png' %}"></image>
+          </div>
+          <div class="col-md-9">
+            <strong>Difficulty: Intermediate</strong><br>
+            <!-- <strong>Dates: {{ hackathon.startDate }} - {{ hackathon.endDate }}</strong><br> -->
+            This course will teach you the fundamentals of real time databases. This tool is useful for almost any
+            hackathon idea and saves a lot of time during your build.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h5 class="m-0 font-weight-bold text-primary">
+          Introduction to Design Thinking <br>
+        </h5>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+        </h5>
+        <div class="dropdown no-arrow">
+        </div>
+        <div class="d-flex">
+          <div class="p-2">
+            <a href="https://www.interaction-design.org/literature/article/5-stages-in-the-design-thinking-process"
+              class="btn btn-success btn-icon-split float-lg-right">
+              <span class="icon text-white-200">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+              <span class="text">Go To Course</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <image class="account-img" src="{% static 'img/design.png' %}"></image>
+          </div>
+          <div class="col-md-9">
+            <strong>Difficulty: N/A</strong><br>
+            <!-- <strong>Dates: {{ hackathon.startDate }} - {{ hackathon.endDate }}</strong><br> -->
+            This course will teach you the process of design thinking and how to carry out an idea from start to
+            finish. These readings will help create a better hackathon idea.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h3 class="h3 mb-0 text-gray-800">Extras</h3>
+  <br>
+
+  <div class="col-lg-12">
+
+
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h5 class="m-0 font-weight-bold text-primary">
+          Stdlib - Intro to Building APIs with FunctionScript on Standard Library <br>
+        </h5>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+        </h5>
+        <div class="dropdown no-arrow">
+        </div>
+        <div class="d-flex">
+          <div class="p-2">
+            <a href="https://https://docs.stdlib.com/overview/introduction/" class="btn btn-success btn-icon-split float-lg-right">
+              <span class="icon text-white-200">
+                <i class="fas fa-arrow-right"></i>
+              </span>
+              <span class="text">Go To Course</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <image class="account-img" src="{% static 'img/stdlib.jpg' %}"></image>
+          </div>
+          <div class="col-md-9">
+            <strong>Difficulty: N/A</strong><br>
+            <!-- <strong>Dates: {{ hackathon.startDate }} - {{ hackathon.endDate }}</strong><br> -->
+            Stdlib shows you how you can make building APIs as easy as 123 using FunctionScript
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  {% endblock %}

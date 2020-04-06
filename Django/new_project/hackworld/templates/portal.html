@@ -1,0 +1,80 @@
+{% extends 'base_portal.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Begin Page Content -->
+ <!-- Begin Page Content -->
+ <div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">{{ hackathon.name }}</h1>
+  <p class="mb-4">Welcome to the {{ hackathon.name }} portal! Feel free to search for team members.</p>
+  <p class="mb-4">If you're new, check out our resources for help with getting started!</p>
+
+ 
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">{{ hackathon.name }} Participants</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+      <!--right here-->
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Skillset</th>
+              <th>GitHub</th>
+              <th>LinkedIn</th>
+              <th>Profile</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Skillset</th>
+                <th>GitHub</th>
+                <th>LinkedIn</th>
+                <th>Profile</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            {% for participant in participants %}
+            <tr>
+              <td>{{ participant.first_name }} {{ participant.last_name }}</td>
+              <td>
+                  {% if participant.profile.tags == 'Business' %}
+                  <div class="badge badge-secondary" style="background-color: #12AF41">Business</div>
+                  {% elif participant.profile.tags == 'Developer' %}
+                  <div class="badge badge-secondary" style="background-color: #25BCFD">Developer</div>
+                  {% elif participant.profile.tags == 'Designer' %}
+                  <div class="badge badge-secondary" style="background-color: pink">Designer</div>
+                  {% else %}
+                  <div class="badge badge-secondary" style="background-color: orange">Newbie</div>
+                  {% endif %}
+              </td>
+              <td>{{ participant.profile.skillset }}</td>
+              <td><a href="https://github.com/{{ participant.profile.github }}" target="_blank">{{ participant.profile.github }}</a></td>
+              <td><a href="https://www.linkedin.com/in/{{ participant.profile.linkedin }}">{{ participant.profile.linkedin }}</a></td>
+              
+              <td>
+                <!-- Button trigger modal-->
+                <a class="btn btn-primary" href="{% url 'accounts:view_profile' participant.username %}">View Profile</a>
+                
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /.container-fluid -->
+
+{% endblock %}
